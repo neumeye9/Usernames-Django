@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Username Validator</title>
+</head>
+<body>
+    <form action="/validate" method='post'>
+    {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{message}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</table>
+</body>
+</html>
